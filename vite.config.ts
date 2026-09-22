@@ -3,11 +3,17 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  server: {
+    watch: {
+      // Windows can lock freshly downloaded TTF files and crash Vite's watcher.
+      ignored: ['**/public/fonts/**'],
+    },
+  },
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg'],
+      includeAssets: ['favicon.svg', 'fonts/*.ttf'],
       manifest: {
         name: 'NextGame',
         short_name: 'NextGame',
@@ -25,7 +31,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,ico,png}'],
+        globPatterns: ['**/*.{js,css,html,svg,ico,png,ttf}'],
         navigateFallback: 'index.html',
       },
     }),

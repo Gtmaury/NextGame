@@ -74,7 +74,7 @@ export const game: MiniGameDef = {
     /** Floating "+Xs / -Xs" clock feedback. */
     function timePopup(x: number, y: number, text: string, color: [number, number, number]) {
       const o = k.add([
-        k.text(text, { font: 'Press Start 2P', size: 12 }),
+        k.text(text, { size: 18 }),
         k.pos(x, y),
         k.color(...color),
         k.opacity(1),

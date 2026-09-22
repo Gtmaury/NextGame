@@ -12,7 +12,6 @@ export function getKaplay(canvas: HTMLCanvasElement): KaplayCtx {
       letterbox: true,
       global: false,
       background: [7, 7, 15],
-      font: 'Press Start 2P',
     })
   }
   return instance

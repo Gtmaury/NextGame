@@ -170,10 +170,10 @@ body {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  min-height: 46px;
   padding: 0;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-muted);
@@ -185,8 +185,8 @@ body {
 }
 
 .heart-btn svg {
-  width: 18px;
-  height: 15px;
+  width: 22px;
+  height: 18px;
   display: block;
   image-rendering: pixelated;
 }
@@ -1283,25 +1283,25 @@ body {
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 1.45;
+    line-height: 1.35;
     text-wrap: balance;
     text-align: left;
   }
 
   .catalog-featured h2 {
-    font-size: clamp(0.55rem, 1.1vw, 0.72rem);
+    font-size: clamp(0.85rem, 1.6vw, 1.05rem);
   }
 
   .catalog-tile h2 {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 
   .catalog-tile--sm h2 {
-    font-size: 0.5rem;
+    font-size: 0.62rem;
   }
 
   .catalog-tile--lg h2 {
-    font-size: 0.55rem;
+    font-size: 0.85rem;
   }
 
   .catalog-tile--sm .card-actions {
@@ -1314,10 +1314,10 @@ body {
     top: 6px;
     right: 6px;
     z-index: 6;
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    min-height: 26px;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
     border-radius: 6px;
     background: rgba(8, 6, 4, 0.5);
   }
@@ -1325,16 +1325,16 @@ body {
   .catalog-tile--sm .heart-btn {
     top: 4px;
     right: 4px;
-    width: 22px;
-    height: 22px;
-    min-width: 22px;
-    min-height: 22px;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
   }
 
   .catalog-featured .heart-btn svg,
   .catalog-tile .heart-btn svg {
-    width: 13px;
-    height: 11px;
+    width: 18px;
+    height: 15px;
   }
 
   .catalog-tile .card-actions,

@@ -50,7 +50,7 @@ export function makeHud(k: KaplayCtx, tag: string, theme: GameTheme): GameHud {
   ])
 
   const line = k.add([
-    k.text('', { font: 'Press Start 2P', size: 12, width: textW }),
+    k.text('', { size: 16, width: textW }),
     k.pos(margin + 24, margin + 12),
     k.color(...theme.primary),
     k.z(42),
@@ -59,7 +59,7 @@ export function makeHud(k: KaplayCtx, tag: string, theme: GameTheme): GameHud {
 
   if (hint) {
     k.add([
-      k.text(hint, { font: 'Pixelify Sans', size: 14, width: textW }),
+      k.text(hint, { size: 14, width: textW }),
       k.pos(margin + 24, margin + 40),
       k.color(...theme.muted),
       k.z(42),
