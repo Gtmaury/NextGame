@@ -1,0 +1,9 @@
+node_modules
+dist
+.cursor
+.agent
+.opencode
+.codegraph
+openspec
+.env*
+.vercel
