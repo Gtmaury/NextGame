@@ -339,29 +339,30 @@ function GameCatalog({
   }, [rest])
 
   useEffect(() => {
-    const el = shelfRef.current
-    if (!el) return
+    const node = shelfRef.current
+    if (!node) return
+    const shelf: HTMLDivElement = node
 
-    let target = el.scrollLeft
-    let current = el.scrollLeft
+    let target = shelf.scrollLeft
+    let current = shelf.scrollLeft
     let raf = 0
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const ease = 0.14
 
     function maxScroll() {
-      return Math.max(0, el.scrollWidth - el.clientWidth)
+      return Math.max(0, shelf.scrollWidth - shelf.clientWidth)
     }
 
     function tick() {
       const diff = target - current
       if (Math.abs(diff) < 0.35) {
         current = target
-        el.scrollLeft = current
+        shelf.scrollLeft = current
         raf = 0
         return
       }
       current += diff * ease
-      el.scrollLeft = current
+      shelf.scrollLeft = current
       raf = requestAnimationFrame(tick)
     }
 
@@ -372,8 +373,8 @@ function GameCatalog({
         dx *= 16
         dy *= 16
       } else if (e.deltaMode === 2) {
-        dx *= el.clientWidth
-        dy *= el.clientHeight
+        dx *= shelf.clientWidth
+        dy *= shelf.clientHeight
       }
       return { dx, dy }
     }
@@ -384,22 +385,22 @@ function GameCatalog({
       e.preventDefault()
       const delta = dy
       if (reduceMotion) {
-        el.scrollLeft = Math.max(0, Math.min(maxScroll(), el.scrollLeft + delta))
-        target = el.scrollLeft
-        current = el.scrollLeft
+        shelf.scrollLeft = Math.max(0, Math.min(maxScroll(), shelf.scrollLeft + delta))
+        target = shelf.scrollLeft
+        current = shelf.scrollLeft
         return
       }
       if (!raf) {
-        current = el.scrollLeft
-        target = el.scrollLeft
+        current = shelf.scrollLeft
+        target = shelf.scrollLeft
       }
       target = Math.max(0, Math.min(maxScroll(), target + delta))
       if (!raf) raf = requestAnimationFrame(tick)
     }
 
-    el.addEventListener('wheel', onWheel, { passive: false })
+    shelf.addEventListener('wheel', onWheel, { passive: false })
     return () => {
-      el.removeEventListener('wheel', onWheel)
+      shelf.removeEventListener('wheel', onWheel)
       if (raf) cancelAnimationFrame(raf)
     }
   }, [])
